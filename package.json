@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc -w",
-    "dev": "ts-node-dev src/index.ts",
+    "dev": "ts-node-dev -r dotenv/config src/index.ts",
     "start": "node build/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,6 +18,7 @@
   "author": "Nader Bahrami",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "fastify": "^3.22.1",
     "fastify-autoload": "^3.9.0",
     "fastify-mongodb": "^4.1.1",

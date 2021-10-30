@@ -10,10 +10,13 @@ interface QueryParameter {
 export const findBookBy =
   (db) => async (req: FastifyRequest, res: FastifyReply) => {
     try {
-      console.log('search query >>>', req.query);
+      const { sortBy, ...queryParams } = req.query as QueryParameter;
+
+      console.log('sortBy', sortBy);
       const matchedBooks = await findBy(db)(
         'books',
-        req.query as QueryParameter
+        queryParams as QueryParameter,
+        sortBy
       );
 
       console.log('m books >>>', matchedBooks);

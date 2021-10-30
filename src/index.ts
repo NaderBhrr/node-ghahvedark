@@ -1,21 +1,24 @@
 import fastify, { FastifyInstance } from 'fastify';
-import autoload from 'fastify-autoload';
 import { bookRoutes, homepageRoutes } from './routes';
 import { Server, IncomingMessage, ServerResponse } from 'http';
-import path from 'path';
 import DBConnect from './config/db';
 
 const server: FastifyInstance<Server, IncomingMessage, ServerResponse> =
   fastify({
     logger: true,
+    ajv: {
+      customOptions: {
+        coerceTypes: 'array',
+      },
+    },
   });
 
 const start = async () => {
   try {
-    console.log('>>>>', `${process.cwd()}/src/routes`);
     // Create a global database context to make the database accessible in all routes
     await server.register(DBConnect);
 
+    // Route handling using the fastify routing concept
     await server.register(bookRoutes, { prefix: '/api/books' });
     await server.register(homepageRoutes);
 

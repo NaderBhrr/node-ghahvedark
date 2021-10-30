@@ -24,3 +24,17 @@ Soome design patterns has been used throughout the task in order to have a clean
 - Repository pattern for encapsulating the datbase queries inside its own directory and having a clean data access pattern
 - MVC pattern to segragate the controller logic from database
 - context-based flow of data to make the database instace avaialbe in all routes
+- validation on the incoming data has been mplemneted as well.
+
+### Run the Project:
+
+You should have **Node** and **Mongo** installed.
+
+Clone the repository from the github and run:
+
+```bash
+    $ yarn install
+
+    $ yarn dev
+
+```
