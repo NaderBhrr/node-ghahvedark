@@ -2,7 +2,7 @@ GET http://localhost:7000/api/books/get-all-books HTTP/1.1
 Content-Type: application/json
 
 ###
-GET http://localhost:7000/api/books/find-book?categories=programming HTTP/1.1
+GET http://localhost:7000/api/books/find-book?categories=programming&sortBy=pages HTTP/1.1
 Content-Type: application/json
 
 ###
@@ -14,11 +14,11 @@ POST http://localhost:7000/api/books/add-new-book HTTP/1.1
 Content-Type: application/json
 
 {
-  "title": "Getting programming with Nodejs",
-  "author": "Jon Drexler",
-  "pages": 485,
+  "title": "TypeScript funcamentals",
+  "author": "Rich Forhmann",
+  "pages": 320,
   "categories": [
-    "computer", "programming", "JavaScript"
+     "programming", "typescript"
   ],
-  "summary": "Learn Nodejs concepts like a pro"
+  "summary": "Learn typescript fundamentals in depth"
 }

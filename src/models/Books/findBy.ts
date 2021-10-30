@@ -11,8 +11,8 @@ export const findBy =
   (db) =>
   async (entity: string, queryParameter: QueryParameter, sortBy?: SortBy) => {
     try {
-      console.log(SortBy);
-      return sortBy && SortBy[sortBy]
+      console.log(sortBy);
+      return sortBy
         ? db
             .collection(entity)
             .find(JSON.parse(JSON.stringify(queryParameter)), { _id: 0 })

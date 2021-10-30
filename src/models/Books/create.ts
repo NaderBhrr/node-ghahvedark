@@ -7,7 +7,9 @@ export const create =
       await db
         .collection(entity)
         .createIndex({ [uniqueField]: 1 }, { sparse: true, unique: true });
-      const result = await db.collection('books').insertOne(newEntity);
+      const result = await db
+        .collection('books')
+        .insertOne({ ...newEntity, createdAt: new Date().toISOString() });
 
       return { data: { createdId: result.insertedId }, statusCode: 201 };
     } catch (error) {
