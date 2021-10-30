@@ -26,10 +26,10 @@ const start = async () => {
     // the previous declared `register` has finished
     server.after((err) => console.log(err));
 
-    const PORT = process.env.PORT || 7000;
-
-    await server.listen(PORT);
-    console.log(`Server started successfully at http://localhost:${PORT}`);
+    await server.listen(process.env.PORT as string);
+    console.log(
+      `Server started successfully at http://localhost:${process.env.PORT}`
+    );
   } catch (error) {
     server.log.error(error);
     process.exit(1);

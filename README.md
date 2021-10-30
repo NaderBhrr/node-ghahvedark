@@ -16,7 +16,6 @@ The following technologies and tools has been used to accompllish the task.
 1. Fastify : as the web server
 2. MongoDB : database
 3. TypeScript
-4.
 
 Soome design patterns has been used throughout the task in order to have a clean folder structure and flow of logic.
 

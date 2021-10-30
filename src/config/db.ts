@@ -1,11 +1,10 @@
 import { MongoClient } from 'mongodb';
 import fastifyPlugin from 'fastify-plugin';
 import { Book, Database } from '../@types';
-const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/ghahvehdark';
 
 const DBConnect = async (fastify) => {
   try {
-    const client = await MongoClient.connect(uri);
+    const client = await MongoClient.connect(process.env.MONGODB_URI as string);
     const db = client.db('ghahvehdark');
     console.log('Database connected successfully');
 
